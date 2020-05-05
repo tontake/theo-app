@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.queensparkfif"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" />
+    <uses-permission 
+        android:name="android.permission.READ_EXTERNAL_STORAGE"        
+        />
+     <uses-permission 
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"        
+        />
+    <uses-permission 
+        android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>		  
+
+    <!--for htc-->
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT"/>
+
+    <!--for sony-->
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE"/>
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE"/>
+
+    <!--for apex-->
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT"/>
+
+    <!--for solid-->
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE"/>
+
+    <!--for huawei-->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+
+    <!--for ZUK-->
+    <uses-permission android:name="android.permission.READ_APP_BADGE"/>
+
+    <!--for OPPO-->
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
+
+    <!--for EvMe-->
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ"/>
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE"/>
+
+<uses-permission 
+        
+        android:name="android.permission.INTERNET"
+        />
+<uses-permission 
+    android:name="android.permission.WRITE_SETTINGS"
+    />
+<uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+<uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>"
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.queensparkfif.Home"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.queensparkfif.Church"/>
+        <activity
+            android:name="com.example.queensparkfif.Page"/>
+        <activity
+            android:name="com.example.queensparkfif.Mission"/>  
+            <activity
+            android:name="com.example.queensparkfif.VideoSermons"/>
+             <activity
+            android:name="com.example.queensparkfif.VideoSermonsList"/>      
+        <activity
+            android:name="com.example.queensparkfif.WordList"/> 
+            <activity
+            android:name="com.example.queensparkfif.Tithers"/> 
+            <activity
+            android:name="com.example.queensparkfif.Wordview"/>        
+        <activity
+            android:name="com.example.queensparkfif.PraiseWorshipList"/>
+        <activity
+            android:name="com.example.queensparkfif.PraiseAudioList"/>
+         <activity
+            android:name="com.example.queensparkfif.PraiseAudioView"/>
+         <activity
+            android:name="com.example.queensparkfif.Video"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            />
+        <activity
+            android:name="com.example.queensparkfif.BibleStudyList"/> 
+            <activity
+            android:name="com.example.queensparkfif.BibleView"/>
+             <activity
+            android:name="com.example.queensparkfif.Gallery"/>
+             <activity
+            android:name="com.example.queensparkfif.GalleryDisplay"/>
+            <activity
+            android:name="com.example.queensparkfif.TestimoniesList"/> 
+            <activity
+            android:name="com.example.queensparkfif.TestimoniesView"/> 
+            <activity
+            android:name="com.example.queensparkfif.AnnouncementList"/>
+             <activity
+            android:name="com.example.queensparkfif.AnnouncementView"/>  
+            <activity
+            android:name="com.example.queensparkfif.Ezekieltv"
+            
+            />
+            <service
+                android:name=".BackgroundListener"  
+                android:exported="false"   /> 
+                <receiver
+                    android:name="com.example.queensparkfif.TheStartService">
+                    <intent-filter>
+                        <action
+                            android:name="android.intent.action.BOOT_COMPLETED"
+                            />
+                        <action
+                            android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                    </intent-filter>
+                    
+                </receiver>
+                    
+                            
+    </application>
+
+</manifest>
