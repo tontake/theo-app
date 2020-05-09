@@ -10,6 +10,9 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
+import me.leolin.shortcutbadger.ShortcutBadger;
+import com.example.queensparkfif.Home;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,10 +49,10 @@ static int testsize=0;
 static int praisesize=0;
 static int videossize=0;
 static int wordsize=0;
-String []names={"announcements","biblestudy","gallery","testimonies","praise","videos","word"};
-static int []namesize={annsize,biblesize,gallersize,testsize,praisesize,videossize,wordsize};
+String []names={"announcements"};
+static int []namesize={annsize};
 	
-
+Home home;
 	@Override
 public IBinder onBind(Intent intent) {
 	// TODO Auto-generated method stub
@@ -67,7 +70,7 @@ public IBinder onBind(Intent intent) {
 	@Override
 	protected void onHandleIntent(Intent inte) {
 		// TODO Auto-generated method stub
-		  
+		/*  
 	    try{ 
 			
 		
@@ -97,6 +100,7 @@ public IBinder onBind(Intent intent) {
 			Result= new String("Exception: " + e.getMessage());
 			 
 	}
+	*/
 	    while(true){
         int c;
 		for (c=0; c<names.length;c++){
@@ -104,10 +108,11 @@ public IBinder onBind(Intent intent) {
 		  pendingIntent = PendingIntent.getActivity(this,0,tointent,0);
 		 
 		 
-		String url="http://10.0.2.2:8081/xampp/myfolder/wop/"+names[c]+".php";
+		//String url="http://10.0.2.2:8081/xampp/myfolder/wop/"+names[c]+".php";
+		String url="http://storage.googleapis.com/my-project-1529147168833.appspot.com%2Fjson-api%2Fannouncements.json";
 		StringBuilder sb=new StringBuilder();
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(60000);
 			URL theurl=new URL(url);
 		   URLConnection conn=theurl.openConnection();	
 		   BufferedReader reader=new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -164,7 +169,7 @@ public IBinder onBind(Intent intent) {
 			notificationManager.notify(0, noti);
 			}
             namesize[c]=products2.size();
-			
+            boolean success=ShortcutBadger.applyCount(getApplicationContext(), products2.size());
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

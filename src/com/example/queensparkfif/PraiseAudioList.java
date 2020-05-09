@@ -50,12 +50,12 @@ public class PraiseAudioList extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.listwrapper);
 		products=new ArrayList<String>();
-		products.add("Ezekiel 2020.mp4");
+		
 		
 		lv1=(ListView)findViewById(R.id.listView1);
 		header=(TextView)findViewById(R.id.Header);
-		getheader=getIntent();
-		header.setText(getheader.getStringExtra("header"));
+	
+		header.setText("Audio");
 		ed=(EditText)findViewById(R.id.mysearch);
 		// To be uncommented when online
 		
@@ -107,10 +107,10 @@ public class PraiseAudioList extends Activity {
 				// TODO Auto-generated method stub
 				  
 				 String clicked=products.get(position);
-					Intent video=new Intent(PraiseAudioList.this,VideoSermons.class);
-					video.putExtra("result", clicked);
+					Intent audio=new Intent(PraiseAudioList.this,PraiseAudioView.class);
+					audio.putExtra("str", clicked);
 					
-					startActivity(video);
+					startActivity(audio);
 				
 				
 			}

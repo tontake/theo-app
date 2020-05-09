@@ -65,9 +65,9 @@ public class Page extends Activity {
 				startActivity(word);
 			}
 			else if(qpr.get(arg2).getName()=="Ezekiel TV Channel"){
-				Intent ez=new Intent(Page.this,Ezekieltv.class);
-				//String url="https://livestream.com/accounts/19491040/events/8258678/player?width=560&height=315";
-			//	Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+				//Intent ez=new Intent(Page.this,Ezekieltv.class);
+				String url="https://livestream.com/accounts/19491040/events/8258678/player?width=560&height=315";
+			Intent ez = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 		     //   startActivity(intent);
 				startActivity(ez);
 			}

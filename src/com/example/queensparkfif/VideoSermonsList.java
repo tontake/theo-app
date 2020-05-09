@@ -55,7 +55,7 @@ public class VideoSermonsList extends Activity {
 		lv1=(ListView)findViewById(R.id.listView1);
 		header=(TextView)findViewById(R.id.Header);
 		getheader=getIntent();
-		header.setText(getheader.getStringExtra("header"));
+		header.setText("Video Sermons");
 		ed=(EditText)findViewById(R.id.mysearch);
 		// To be uncommented when online
 		

@@ -74,7 +74,7 @@ public class PraiseAudioView extends Activity {
 				btn2.setBackgroundColor(Color.WHITE);
 				try{
 					Toast.makeText(getApplicationContext(), "Ready ...", Toast.LENGTH_SHORT).show();
-					p.setDataSource(froma.getStringExtra("str"));
+					p.setDataSource("http://storage.googleapis.com/my-project-1529147168833.appspot.com%2Fpraise%2F"+froma.getStringExtra("str"));
 					
 					p.prepare();
 					p.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {

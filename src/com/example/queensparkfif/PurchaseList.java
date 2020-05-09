@@ -59,7 +59,7 @@ public class PurchaseList extends Activity {
 		lv1=(ListView)findViewById(R.id.listView1);
 		header=(TextView)findViewById(R.id.Header);
 		getheader=getIntent();
-		header.setText(getheader.getStringExtra("header"));
+		header.setText("Store");
 		ed=(EditText)findViewById(R.id.mysearch);
 		// To be uncommented when online
 		
@@ -153,7 +153,7 @@ public class PurchaseList extends Activity {
 			try {
 				
 				JSONObject jso=new JSONObject(resu);
-				JSONArray jsarr=jso.getJSONArray("videos");
+				JSONArray jsarr=jso.getJSONArray("purchase");
 				for(int i=0; i<jsarr.length(); i++){
 					JSONObject obj= jsarr.getJSONObject(i);
 					products.add(

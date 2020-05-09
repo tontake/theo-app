@@ -54,8 +54,8 @@ public class PraiseWorshipList extends Activity {
 		products.add("Videos");
 		products.add("Audio");
 		helper.add("Praise Videos");
-		helper.add("videopraise");
-		helper.add("http://storage.googleapis.com/my-project-1529147168833.appspot.com%2Fjson-api%2Fvideopraise.json");
+		helper.add("praisevideos");
+		helper.add("http://storage.googleapis.com/my-project-1529147168833.appspot.com%2Fjson-api%2Fpraisevideos.json");
 		lv1=(ListView)findViewById(R.id.listView1);
 		header=(TextView)findViewById(R.id.Header);
 		
@@ -163,7 +163,7 @@ public class PraiseWorshipList extends Activity {
 			try {
 				
 				JSONObject jso=new JSONObject(resu);
-				JSONArray jsarr=jso.getJSONArray("videos");
+				JSONArray jsarr=jso.getJSONArray("videospraise");
 				for(int i=0; i<jsarr.length(); i++){
 					JSONObject obj= jsarr.getJSONObject(i);
 					products.add(

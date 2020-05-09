@@ -61,7 +61,7 @@ public class BibleStudyList extends Activity {
 		// To be uncommented when online
 		
 		
-       new ReadJson().execute("http://storage.googleapis.com/my-project-1529147168833.appspot.com%2Fjson-api%2Fvideos.json");
+       new ReadJson().execute("http://storage.googleapis.com/my-project-1529147168833.appspot.com%2Fjson-api%2Fbiblestudy.json");
 		//arr=new ArrayAdapter(this,android.R.layout.simple_list_item_1,videos);
        arr=new ArrayAdapter(BibleStudyList.this,android.R.layout.simple_list_item_1,products);
 		//Toast.makeText(VideoSermonsList.this,"Number of videos is "+ products.size(), Toast.LENGTH_LONG).show();
@@ -109,7 +109,7 @@ public class BibleStudyList extends Activity {
 				  
 				 
 					Intent help=new Intent(BibleStudyList.this,BibleView.class);
-				
+				help.putExtra("help", products2.get(position));
 				 
 					startActivity(help);
 				 
@@ -162,7 +162,7 @@ public class BibleStudyList extends Activity {
 							obj.getString("name")
 						);
 					
-					products2.add(obj.getString("id"));
+					products2.add(obj.getString("path"));
 				}
 				
 				// comment or uncomment check first

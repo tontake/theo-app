@@ -12,7 +12,7 @@ import android.webkit.WebViewClient;
 
 public class BibleView extends Activity{
 WebView web;
-ArrayList<String> url;
+String url;
 Intent i;
 String MAIN="https://theoapp.firebaseapp.com";
 	@Override
@@ -21,10 +21,10 @@ String MAIN="https://theoapp.firebaseapp.com";
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.bibleview);
 		i=getIntent();
-		 url=i.getStringArrayListExtra("help");
+		 url=i.getStringExtra("help");
 		 web=(WebView)findViewById(R.id.web);
 			web.setWebViewClient(new MyWebViewClient());
-		 if(url.toString()=="index.html"){
+		 if(url.equals("index.html")){
 		
 		String path="file:///android_asset/index.html";
 		web.getSettings().setJavaScriptEnabled(true);
@@ -46,7 +46,7 @@ String MAIN="https://theoapp.firebaseapp.com";
 	        // Otherwise, the link is not for a page on my site, so launch another Activity that handles URLs
 	        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 	        startActivity(intent);
-	        return true;
+	        return false;
 	    }
 	    @Override
 	    public void onReceivedError(WebView webview, int i, String s, String s1)

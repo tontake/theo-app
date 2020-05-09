@@ -41,8 +41,8 @@ PendingIntent pendingIntent;
 		btest=(Button)findViewById(R.id.button1);
 		
 		intent = new Intent(Home.this, Church.class);
-	//	servi=new Intent(Home.this,BackgroundListener.class);
-		//startService(servi);
+		servi=new Intent(Home.this,BackgroundListener.class);
+		startService(servi);
 		// pendingIntent = PendingIntent.getActivity(this,0,intent,0);
 		final Animation animation = new AlphaAnimation(1, 0); // Change alpha from fully visible to invisible
 	    animation.setDuration(1200); // duration - half a second
@@ -75,7 +75,7 @@ PendingIntent pendingIntent;
 				Intent callchurch=new Intent(Home.this,Church.class);
 				
 	
-				boolean success=ShortcutBadger.applyCount(Home.this, 2);
+				//boolean success=ShortcutBadger.applyCount(Home.this, 2);
 				//Toast.makeText(getApplicationContext(), "it has "+ success, Toast.LENGTH_LONG).show();
 				
 				startActivity(callchurch);

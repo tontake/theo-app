@@ -92,6 +92,9 @@
         <activity
             android:name="com.example.queensparkfif.PraiseWorshipList"/>
         <activity
+            android:name="com.example.queensparkfif.HelperList"/>
+        
+        <activity
             android:name="com.example.queensparkfif.PraiseAudioList"/>
          <activity
             android:name="com.example.queensparkfif.PraiseAudioView"/>
