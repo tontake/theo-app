@@ -50,7 +50,7 @@ static int praisesize=0;
 static int videossize=0;
 static int wordsize=0;
 String []names={"announcements"};
-static int []namesize={annsize};
+public static int []namesize={annsize};
 	
 Home home;
 	@Override
@@ -148,6 +148,7 @@ public IBinder onBind(Intent intent) {
 				products2.add(obj.getString("id"));
 			}
 			count=products2.size()-namesize[c];
+			namesize[c]=count;
 			//count=products2.size();
 			String ans=products.get(0);
 			if(count>0){
@@ -168,8 +169,8 @@ public IBinder onBind(Intent intent) {
 			NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 			notificationManager.notify(0, noti);
 			}
-            namesize[c]=products2.size();
-            boolean success=ShortcutBadger.applyCount(getApplicationContext(), products2.size());
+          //  namesize[c]=products2.size();
+            boolean success=ShortcutBadger.applyCount(getApplicationContext(), count);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

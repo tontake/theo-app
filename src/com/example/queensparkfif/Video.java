@@ -55,7 +55,7 @@ Thread t;
 		     vow.requestFocus();
 		   //  vow.setBackgroundColor(Color.TRANSPARENT);
 		     vow.setMediaController(mc);
-		     vow.seekTo(10000);
+		     vow.seekTo(1000);
 		     dg=new ProgressDialog(Video.this);
 		     dg.setTitle("STREAMING IN ANDROID");
 		     dg.setCancelable(true);
